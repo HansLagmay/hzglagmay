@@ -1,0 +1,119 @@
+  <!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title> Compute Grade</title>
+   <link rel="stylesheet" href="GradeComp.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+   
+
+</head>
+<body> 
+
+<h1> This page computes grades</h1>
+
+<p>
+
+<label for="score">Score:</label> 
+<input id="score" name="score" type="number">
+
+<br><br>
+
+<label for="items">Items:</label> 
+<input id="items" name="items" type="number">
+
+
+<br><br>
+
+<label for="base"> Base: </label> 
+<input id="base" name="base" type="number">
+
+<br>
+<button onclick="computegrade()"> Compute Grade </button>
+<button onclick="clearValues()">Clear</button>
+
+<br><br>
+
+
+<h2  id="grade" type="text"></h2>
+<h2  id="letterg" type="text"></h2>
+
+<br>
+<a href="index.html">Back to homepage</a>
+
+</p>
+
+<script>
+
+function computegrade()
+
+{
+   var x,y,z,lg,cm;
+
+  x = document.getElementById("score").value*1;  // Multiply by 1 to convert to number 
+  y = document.getElementById("items").value*1;  // without using parseFloat
+  z = document.getElementById("base").value*1;
+
+  console.log(x);
+  console.logYes;
+  console.log(z);
+    
+   let g=Math.round((x/y)*(100-z)+z); // formula for grade
+  
+   console.log(g);
+
+  // convert to literal grade
+   if (g < 72) {
+      lg = "F";
+      cm= ". You got a failing grade.";
+      
+
+   } else if (g>=72 && g<=75) {   // && stands for AND,  || stands for OR
+      lg = "D";
+      cm= ". You got a passing grade.";
+
+   } else if (g>=76 && g<=79) {
+      lg = "C";
+      cm= ". You got a below average grade.";
+
+   } else if (g>=80 && g<=83) {
+      lg = "C+";
+      cm= ". You got an average grade.";
+      
+   } else if (g>=84 && g<=87) {
+      lg = "B";
+      cm= ". You got a good grade.";
+
+   } else if (g>=88 && g<=91) {
+      lg = "B+";
+      cm= ". You got a very good grade.";
+
+    } else  {
+      lg = "A";
+     cm= ". You got an excellent grade.";
+   }      
+         
+   
+
+   document.getElementById("grade").innerHTML='The grade for '
+    +x+"/"+y+" using base "+z+" is "+g;
+
+   document.getElementById("letterg").innerHTML='The equivalent is '+lg +cm ;   
+}
+
+function clearValues() {
+         document.getElementById("score").value = '';
+         document.getElementById("items").value = '';
+         document.getElementById("base").value = '';
+         document.getElementById("grade").innerHTML = "";
+         document.getElementById("letterg").innerHTML = "";
+        }
+
+
+
+
+</script>
+
+</body>
+</html>
+    
