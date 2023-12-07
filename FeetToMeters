@@ -1,0 +1,44 @@
+  <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Feet to Meters Converter</title>
+    <!-- Load external CSS styles -->
+    <link rel="stylesheet" href="CtoF.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+
+
+</head>
+<body>
+    <h1>This page converts Feet to Meters</h1>
+
+    <br><br>
+    <label for="Feet">Input Number:</label>
+    <input id="Feet"  name="feet" type="number">
+    <button onclick="convertFeet()">Convert</button>
+  
+
+    <br><br>
+    <label for="Meters">The Conversion is:</label>
+    <input id="Meters"  name="meters" type="number" readonly> 
+    <button onclick="clearValues()">Clear</button>
+    
+    <br><br>
+    <a href="index.html">Back to homepage</a>
+
+    <!-- Load external JavaScript -->
+    <script>
+           function convertFeet() {
+            var Feet = parseFloat(document.getElementById("Feet").value);
+            var Meters = Feet * 0.3048;
+            document.getElementById("Meters").value = Meters.toFixed(2); 
+        }
+
+        function clearValues() {
+            document.getElementById("Feet").value = '';
+            document.getElementById("Meters").value = '';
+        }
+        
+    </script>
+</body>
+</html>
