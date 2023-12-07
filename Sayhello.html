@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="SayHello.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+
+<title> Say Hello</title>
+</head>
+<body> 
+
+<h1> This page says hello</h1>
+
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+
+<p>       qwertyuiopasdfghjklzxcvbnm   </p>
+
+<label for-"fname">What is your name?</label> <br>
+<input type "text" id="fname" > 
+<button onclick="sayhello()"> Say Hello </button>
+<br>
+<h2 id="hellomsg"> </h2>
+<br>
+<a href="index.html">Back to homepage</a>
+
+<script>
+function sayhello()
+{
+    name = document.getElementById("fname").value;
+
+    document.getElementById("hellomsg").innerHTML='Hello ' +name;
+}
+
+
+</script>
+</body>
+</html>
+    
